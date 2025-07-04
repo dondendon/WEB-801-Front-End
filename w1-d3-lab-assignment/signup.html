@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Local Community Board</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
+    nav a { margin-right: 15px; }
+    form { max-width: 400px; }
+    label { display: block; margin-top: 10px; }
+    input, select { width: 100%; padding: 6px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sign Up for a Class</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <section>
+    <p>Please fill out the form below to sign up for a class.</p>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="class">Choose a class:</label>
+      <select id="class" name="class" required>
+        <option value="">--Please select--</option>
+        <option value="flower">Flower Arranging</option>
+        <option value="japanese">Japanese Language</option>
+        <option value="calligraphy">Calligraphy</option>
+        <option value="knitting">Knitting</option>
+        <option value="origami">Origami</option>
+        <option value="painting">Painting</option>
+        <option value="yoga">Yoga</option>
+      </select>
+
+      <label for="day">Choose a day:</label>
+      <select id="day" name="day" required>
+        <option value="">--Please select--</option>
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+      </select>
+
+      <input type="submit" value="Submit" style="margin-top: 15px;" />
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Local Community Center</p>
+  </footer>
+</body>
+</html>
