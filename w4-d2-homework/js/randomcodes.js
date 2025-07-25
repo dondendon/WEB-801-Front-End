@@ -1,6 +1,6 @@
 window.onload = function () {
-    let generatedCode = ""; // <-- make it accessible
-
+    let generatedCode = "";
+  
     function generateCode() {
         let code = '';
         let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
@@ -25,7 +25,7 @@ window.onload = function () {
             : "rgba(255, 255, 255, 1)";
     }
 
-    disableButton(true); // correct initial state
+    disableButton(true);
 
     const codebox = document.getElementById("codeentered");
     codebox.addEventListener("input", evaluateCode);
@@ -33,9 +33,8 @@ window.onload = function () {
     function evaluateCode() {
         const entered = codebox.value.trim();
         if (entered === generatedCode) {
-            disableButton(false); // enable
-        } else {
-            disableButton(true); // still wrong
+            disableButton(false);
+            disableButton(true);
         }
     }
 };
