@@ -1,0 +1,122 @@
+<div id="container">
+  <link rel="stylesheet" href="style.css">
+
+  <body id="contact">
+    <!-- Keep this header -->
+    <header>
+      <div class="main-header">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="images/logo.png" alt="Great Cliffs Logo">
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+          <div class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="cliff.html">Cliffs</a></li>
+              <li><a href="activities.html">Activities</a></li>
+              <li class="active"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-header"></div>
+    <h1>Contacting Us</h1>
+        
+    <p>If you need more information about the Cliffs, Hours of Operations, Facilities or questions about this site, please contact us by using one of the following:</p>
+        
+    <h2>Phone:</h2>
+    <p>(800)GCLIFFS</p>
+        
+    <h2>Email:</h2>
+    <p>info@greatcliffs.com</p>
+        
+    <form action="/contact" method="post">
+        <label for="fullname" class="form-title">Contact Form</label><br>
+        <label for="fullname">Enter your name:</label><br>
+        <input type="text" id="fullname" name="fullname" required placeholder="John Doe"><br><br>
+            
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="email" required placeholder="johndoe@gmail.com"><br><br>
+            
+        <label for="phone">Enter your phone:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxxx"><br><br>
+            
+        <label>How should we contact you?</label><br>
+        <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+        <label for="contact-email">Email</label>
+        <input type="radio" id="contact-phone" name="contact-method" value="phone">
+        <label for="contact-phone">Phone</label><br><br>
+            
+        <label for="cliff">Which Cliff are you inquiring about?</label><br>
+        <select id="cliff" name="cliff">
+            <option value="">Select a cliff...</option>
+            <option value="west">West Cliff</option>
+            <option value="north">North Cliff</option>
+            <option value="east">East Cliff</option>
+            <option value="south">South Cliff</option>
+        </select><br><br>
+
+        <!-- New Input for w4-d3-homwork -->
+        <label for="inquiry">How should we contact you:</label><br>
+        <select id="inquiry">
+            <option value="">-- Contact Methods --</option>
+            <option value="option1">Phone</option>
+            <option value="option2">Email</option>
+            <option value="option3">Social Media</option>
+        </select><br><br>
+        <div id="input1" style="display:none;">
+            <label for="inputOption1">Please provide your phone number:</label>
+            <input type="number" id="inputOption1" name="inputOption1">
+        </div>
+        <div id="input2" style="display:none;">
+            <label for="inputOption2">Please provide your email:</label>
+            <input type="email" id="inputOption2" name="inputOption2">
+        </div>
+        <div id="input3" style="display:none;">
+            <label for="inputOption3">Please provide your social media account:</label>
+            <input type="text" id="inputOption3" name="inputOption3">
+        </div><br>
+
+        <!-- How did you hear about us -->
+        <label for="hear-about">How did you hear about us:</label><br>
+        <textarea id="hear-about" name="hear-about" rows="4" cols="50"></textarea>
+        <div id="info-box" style="display:none; 
+            margin-top:6px; 
+            background:#f0f0f0; 
+            border:1px solid #ccc; 
+            padding:8px; 
+            border-radius:6px; 
+            font-size:0.9em; 
+            width:50%;">
+            Please describe how you heard about us (e.g., friend, social media, advertisement, etc.).
+        </div>
+        <br><br>
+
+        <!-- random codes -->
+        <div class="randomcode">
+            <input type="text" id="codeentered" placeholder="Enter characters">
+            <p id="codes"></p>
+        </div>
+
+        <input type="submit" value="Submit" id="submit">
+    </form>
+
+    <section>
+        <ul id="partners"></ul>
+    </section>
+    
+    <!--digital clock-->
+    <script src="js/digclock.js"></script>
+    <!--partners-->
+    <script src="js/site_scripts.js"></script>
+    <!--randomcodes-->
+    <script src="js/randomcodes.js"></script>
+    <!--new feature-->
+    <script src="js/contact-page.js"></script>
+  </body>
+</div>
