@@ -1,0 +1,77 @@
+/* Header */
+header {
+  background: url(images/central_park.jpg) center center no-repeat;
+  background-size: cover; /* Make background responsive */
+  height: 400px; /* Adjust if needed */
+  padding-top: 100px;
+  padding-left: 100px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  color: #fff;
+}
+
+/* Nav */
+li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 20px;
+}
+li a {
+  text-decoration: none;
+}
+li a:link {
+  color: #000;
+}
+li a:visited {
+  color: #818db3;
+}
+li a:hover {
+  color: #333;
+}
+li a:active {
+  color: #753a30;
+}
+nav {
+  background-color: rgb(255, 245, 238);
+  height: 50px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+/* Main content */
+main {
+  margin: 50px;
+}
+main h1 {
+  color: rgb(129, 141, 179);
+  font-family: Arial, sans-serif;
+}
+
+/* Card layout */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: stack on small screens */
+  gap: 20px;
+}
+.card img {
+  max-width: 100%; /* Image responsive */
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+footer {
+  height: 40px;
+  background-color: rgb(129, 141, 179);
+  text-align: center;
+  padding-top: 20px;
+  color: rgb(211, 218, 240);
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr 1fr; /* Two columns at >= 600px */
+  }
+}
