@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <style>
+    * { font-family:Arial, Helvetica, sans-serif; }
+    #leftside { float:left; width: 30%; min-height: 1200px; background-color:rgb(77, 192, 154);}
+    #rightside { float:left; width: 70%; min-height: 1200px; background-color:rgb(238, 226, 192); position:relative;}
+    #container { background-color:rgba(255, 255, 255, 0.85); position: absolute; top: 15%; left: 15%; min-width: 1100px; min-height: 1050px; border-radius: 0.7em;}
+    header { height: 50px; background-color:rgba(231, 229, 229, 0.5); font-size: 2.75em; padding:0.5em; color:rgb(216, 150, 7);}
+    header span { font-family: 'Sacramento', cursive; }
+    nav ul { list-style: none; margin: 0; padding: 0; background-color: rgb(60, 190, 160); overflow: hidden; }
+    nav li { float: left; }
+    nav li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+    nav li a:hover { background-color: rgb(77, 192, 154); }
+    main { position: relative; }
+    main h2 { position: absolute; left: 20%; top: 30px; margin: 25px 0 200px 50px; color:rgb(60, 190, 160); text-transform: uppercase;}
+    main #photos img { margin: 0.75em; border: 0.85em solid rgb(255, 255, 255);}
+    section#blogposts { position: absolute; left: 20%; top: 70px; padding: 50px;}
+    main .post { margin: 25px; padding: 25px; border: 2px solid rgba(83, 78, 58, 0.6); border-radius: 0.5em; display: flex; align-items: flex-start; }
+    main .post img.profile { border-radius: 50%; margin-right: 15px; cursor: pointer; width: 60px; height: 60px; }
+    footer { position: absolute; bottom: 0; height: 50px; width: 100%; text-align: center; font-size: 0.85em;}
+  </style>
+</head>
+<body>
+  <aside id="leftside"></aside>
+  <aside id="rightside"></aside>
+
+  <div id="app">
+    <div id="container">
+      <!-- Header Component -->
+      <blog-header></blog-header>
+
+      <!-- Nav Component -->
+      <blog-nav></blog-nav>
+
+      <!-- Main Section -->
+      <main>
+        <photo-section :src="photo.src" :alt="photo.alt"></photo-section>
+        <h2>Comments</h2>
+        <blog-posts :posts="posts"></blog-posts>
+      </main>
+
+      <!-- Footer Component -->
+      <blog-footer></blog-footer>
+    </div>
+  </div>
+
+  <script>
+    // Header component
+    Vue.component('blog-header', {
+      template: `<header><span>Food Blog</span></header>`
+    });
+
+    // Navigation component
+    Vue.component('blog-nav', {
+      template: `
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      `
+    });
+
+    // Photo section
+    Vue.component('photo-section', {
+      props: ['src', 'alt'],
+      template: `
+        <aside id="photos">
+          <img :src="src" :alt="alt" width="180">
+        </aside>
+      `
+    });
+
+    // Single blog post
+    Vue.component('blog-post', {
+      props: ['post'],
+      template: `
+        <div class="post">
+          <a :href="post.profile" target="_blank">
+            <img :src="post.profile" class="profile" :alt="post.author + ' profile'">
+          </a>
+          <div>
+            <span class="author">{{ post.author }}</span> —
+            <span class="date">{{ post.date }}</span>
+            <span class="reply">REPLY</span>
+            <p>{{ post.content }}</p>
+          </div>
+        </div>
+      `
+    });
+
+    // Blog posts section
+    Vue.component('blog-posts', {
+      props: ['posts'],
+      template: `
+        <section id="blogposts">
+          <blog-post v-for="(p, index) in posts" :key="index" :post="p"></blog-post>
+        </section>
+      `
+    });
+
+    // Footer component
+    Vue.component('blog-footer', {
+      template: `<footer>&copy; Copyright FOOD BLOG</footer>`
+    });
+
+    // Vue Instance
+    new Vue({
+      el: '#app',
+      data: {
+        photo: {
+          src: "images/chilli.jpg",
+          alt: "White Chicken Chili"
+        },
+        posts: [
+          {
+            author: "Brianna",
+            date: "February 18, 2021 @ 3:30 pm",
+            content: "Was amazing! My Walmart didn’t have coriander in stock and didn’t have ground cumin...",
+            profile: "images/profile.png"
+          },
+          {
+            author: "LINH",
+            date: "February 15, 2021 @ 9:46 am",
+            content: "I just made this soup today and it’s so tasty! didn’t have corn at home but still turned out very good...",
+            profile: "images/profile.png"
+          },
+          {
+            author: "CATHERINE LEONARDO",
+            date: "February 13, 2021 @ 12:58 pm",
+            content: "I LOVE this White Chicken Chili! You are right, it is satiating meal—delicious with toasted bread...",
+            profile: "images/profile.png"
+          },
+          {
+            author: "KALI",
+            date: "February 13, 2021 @ 11:31 am",
+            content: "This recipe is dynamite! My partner usually won’t eat beans but he finished the whole pot...",
+            profile: "images/profile.png"
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+* { font-family: Arial, Helvetica, sans-serif; }
+
+header span { font-family: 'Sacramento', cursive; }
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Floating box (modal) */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
